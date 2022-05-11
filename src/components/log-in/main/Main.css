@@ -1,0 +1,122 @@
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 30px auto;
+}
+
+.title-log-in {
+    font-size: 3.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 2.4rem;
+    margin-bottom: 1.6rem;
+    color: var(--product-color);
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.2rem;
+    margin-bottom: 1.4rem;
+}
+
+.label {
+    display: none;
+}
+
+.input {
+    height: 46px;
+    font-size: 1.4rem;
+    margin-top: 4px;
+    margin-bottom: 16px;
+    padding-left: 10px;
+    border: 2px solid var(--product-color);
+    border-radius: 10px;
+    outline: none;
+}
+
+.input::placeholder {
+    color: var(--input-placeholder-color);
+    margin-left: 10px;
+}
+
+.button-login {
+    background-color: var(---button);
+    width: 100%;
+    height: 60px;
+    margin-top: 8px;
+    font-size: 1.8rem;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+}
+
+.check-user {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.check-user__checked {
+    color: var(--product-color);
+    text-decoration: none;
+}
+
+.check-user__checked:hover {
+    color: var(--black);
+    cursor: pointer;
+}
+
+@media (min-width: 768px) {
+    .main {
+        width: 60%;
+    }
+
+    .label {
+        display: block;
+        margin-bottom: 0.8rem;
+        font-size: 2.2rem;
+        color: #0064B7;
+    }
+
+    .check-user {
+        font-size: 1.6rem;
+    }
+}
+
+
+
+
+@media (min-width: 1024px) {
+    .main {
+        justify-content: center;
+        width: 35%;
+        margin: 0 auto;
+    }
+
+    .title-log-in {
+        font-size: 5.2rem;
+        font-weight: 900;
+    }
+
+    .label {
+        font-size: 2.6rem;
+    }
+
+    .input {
+        height: 75px;
+        font-size: 2.2rem;
+    }
+
+    .button-login {
+        height: 70px;
+    }
+
+    .check-user {
+        font-size: 1.8rem;
+    }
+}
