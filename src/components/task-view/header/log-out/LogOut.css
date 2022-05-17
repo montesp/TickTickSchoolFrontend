@@ -1,0 +1,23 @@
+.log-out {
+    display: flex;
+    align-items: center;
+    width: 50%;
+    color: var(--white);
+    text-align: center;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.log-out:hover {
+    color: var(--black);
+}
+
+@media (min-width:728px) {
+    .log-out {
+        font-size: 2rem;
+    }
+}
+
+

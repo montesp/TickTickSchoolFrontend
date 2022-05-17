@@ -1,7 +1,7 @@
 import React from "react";
-import { Header } from "./Header/Header";
-import { ProductIcon } from "./Header/ProductIcon";
-import { TitleProduct } from "./Header/TitleProduct";
+import { Header } from "./header/Header";
+import { ProductIcon } from "./header/ProductIcon";
+import { TitleProduct } from "./header/TitleProduct";
 import { Main } from "./main/Main";
 import { TitleMain } from "./main/TitleMain";
 import { InputContainer } from "./main/InputContainer";
@@ -9,12 +9,12 @@ import { LoginButton } from "./main/LoginButton";
 import { RegisterText } from "./main/RegisterText";
 
 
-const dataS = [
-    {key:1, id: "user", type: "email", placeholder: "usuario...", text: "Usuario" },
-    {key:2 ,id: "password", type: "password", placeholder: "contraseña...", text: "Contraseña" },
-];
+// Get Data for Inputs components
+import LogInData from './dataLogIn';
+
 
 function LogIn() {
+    const getLogInData = LogInData();
     return(
         <React.Fragment>
             <Header>
@@ -22,8 +22,8 @@ function LogIn() {
                    <ProductIcon/>
             </Header>
             <Main>
-                <TitleMain/>
-                {dataS.map(
+                <TitleMain text={"Iniciar sesion"}/>
+                {getLogInData.map(
                     data => (
                         <InputContainer
                         key={data.key}
@@ -32,7 +32,7 @@ function LogIn() {
                         placeholder={data.placeholder}
                         />
                 ))}
-                <LoginButton/>
+                <LoginButton text={"Iniciar sesion"}/>
                 <RegisterText/>
             </Main>
         </React.Fragment>

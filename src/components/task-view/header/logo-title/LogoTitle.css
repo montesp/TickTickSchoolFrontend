@@ -1,0 +1,24 @@
+.logo-title {
+    display: none;
+}
+
+
+@media (min-width: 1024px) {
+    .logo-title {
+        display: block;
+        width: 20%;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 5rem;
+        line-height: 5.2rem;
+        color: var(--product-color);
+    }
+}
+
+@media (min-width: 1440px) {
+    .logo-title {
+        width: 25%;
+        font-size: 6rem;
+        line-height: 5.5rem;
+    }
+}

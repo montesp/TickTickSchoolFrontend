@@ -1,9 +1,9 @@
 import React from "react";
 
-function TitleMain(){
+function TitleMain({text}){
     return(
         <h4 className="title-log-in">
-            Log in
+            {text}
         </h4>
     );
 }

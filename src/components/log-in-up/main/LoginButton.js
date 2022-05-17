@@ -1,12 +1,12 @@
-import React from "react";  
+import React from "react";
 
-function LoginButton(){
+function LoginButton({text}){
     return(
         <button
         type="button"
         className="button-login"
         >
-        Iniciar sesion
+            {text}
         </button>
     );
 }

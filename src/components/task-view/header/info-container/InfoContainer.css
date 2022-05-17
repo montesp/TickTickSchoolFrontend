@@ -1,0 +1,16 @@
+.info-container {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    margin: 0 auto;
+}
+
+@media (min-width:1024px) {
+    .info-container {
+        align-self: center;
+        justify-self: end;
+        width: 40%;
+        margin: 0;
+        
+    }
+}
