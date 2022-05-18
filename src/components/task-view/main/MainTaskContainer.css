@@ -1,0 +1,13 @@
+.main-task-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+@media (min-width: 1024px) {
+    .main-task-container {
+        flex-direction: row;
+    }
+}
+
