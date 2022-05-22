@@ -7,8 +7,12 @@
     ---button: #0091EA;
     --white: #fefefe;
     --black:#1b1b1b;
+    --task-color: #e9e9e9;
     --input-placeholder-color:#949494;
     --input-label:#111;
+    --green-state: #00C851;
+    --yellow-state: #FFBB33;
+    --red-state: #FF4444;
 }
 
 * {
@@ -35,11 +39,3 @@ body {
     height: 100vh;
     width: 100vw;
 }
-
-
-/* 
-@media (min-width: 1024px) {
-    #root {
-        flex-direction: row;
-    }
-} */

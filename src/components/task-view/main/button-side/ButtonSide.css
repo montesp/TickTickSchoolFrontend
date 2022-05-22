@@ -29,8 +29,8 @@
 
 @media (min-width: 375px) {
     .button-side-icon {
-        width: 88px;
-        height: 88px;
+        width: 66px;
+        height: 66px;
     }
 
     .button-side-title {
@@ -40,8 +40,8 @@
 
 @media  (min-width: 425px) {
     .button-side-icon {
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
     }
 
 

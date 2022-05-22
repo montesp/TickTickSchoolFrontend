@@ -9,8 +9,14 @@ import { HeaderT } from "./header/header-info/HeaderInfo";
 import { MainTaskContainer } from "./main/MainTaskContainer";
 import { SideBar } from "./main/side-bar/SideBar";
 import { ButtonSide } from "./main/button-side/ButtonSide";
+import { MainTask } from "./main/main-task/MainTask";
+import { Task } from "./main/task/Task";
+
+// Icons
 import plusIcon from "../../assets/icons/plus.svg";
 import subjectIcon from "../../assets/icons/file.svg"
+
+
 
 function TaskView(){
     return(
@@ -31,17 +37,35 @@ function TaskView(){
             <MainTaskContainer>
                 <SideBar>
                     <ButtonSide
-                    alt="Tareas icon"
+                    alt="Plus icon"
                     src={plusIcon}
                     text={"Tareas"}
                     />
                     <ButtonSide
-                    alt="Materias icon"
+                    alt="Subject icon"
                     src={subjectIcon}
                     text={"Materias"}
                     />
                 </SideBar>
-                
+                <MainTask>
+                    <Task/>
+                    <Task/>
+                    <Task/>
+
+                    <Task/>
+                    <Task/>
+                    <Task/>
+                    <Task/>
+                    <Task/>
+                    <Task/>
+                    <Task/>
+                    <Task/>
+
+                    <Task/>
+                    <Task/>
+
+
+                </MainTask>
             </MainTaskContainer>
         </Fragment>
 
