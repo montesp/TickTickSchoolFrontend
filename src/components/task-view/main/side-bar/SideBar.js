@@ -3,9 +3,9 @@ import './SideBar.css';
 
 function SideBar({children}){
     return(
-        <side className="side-bar">
+        <div className="side-bar">
             {children}
-        </side>
+        </div>
     );
 }
 

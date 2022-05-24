@@ -7,7 +7,7 @@ import { TaskView } from './task-view/TaskView';
 function App() {
   return (
     // <LogIn/>
-    // {/* <LogUp/> */}
+    // <LogUp/>
     <TaskView/>
   );
 }

@@ -11,14 +11,21 @@ import { SideBar } from "./main/side-bar/SideBar";
 import { ButtonSide } from "./main/button-side/ButtonSide";
 import { MainTask } from "./main/main-task/MainTask";
 import { Task } from "./main/task/Task";
+import { ButtonAddTask } from "./main/button-add-task/ButtonAddTask";
 
 // Icons
 import plusIcon from "../../assets/icons/plus.svg";
 import subjectIcon from "../../assets/icons/file.svg"
+import documentIcon from '../../assets/icons/file-plus-2.svg';
+
 
 
 
 function TaskView(){
+    fetch('https://rickandmortyapi.com/api/character/161')
+    .then(response => response.json())
+    .then(data => console.log(data));
+
     return(
         <Fragment>
             <HeaderT>
@@ -64,7 +71,9 @@ function TaskView(){
                     <Task/>
                     <Task/>
 
-
+                    <ButtonAddTask
+                        icon={documentIcon}
+                    />
                 </MainTask>
             </MainTaskContainer>
         </Fragment>
