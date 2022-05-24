@@ -1,0 +1,37 @@
+.celd {
+    display: flex;
+    width: 100%;
+    height: 44px;
+    padding-left: 10px;
+    border: 2px solid var(--black);
+    color: var(--black);
+}
+
+.celd-text {
+    font-size: 1.2rem;
+    align-self: center;
+    justify-self: center;
+}
+
+@media (min-width: 768px) {
+    .celd {
+        height: 54px;
+    }
+
+    .celd-text {
+        font-size: 1.8rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .celd-text {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .celd {
+        height: 60px;
+    }
+}
+
