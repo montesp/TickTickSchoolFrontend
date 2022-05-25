@@ -1,8 +1,19 @@
 import './ButtonSide.css'
+import { useNavigate } from 'react-router-dom';
 
-function ButtonSide({alt, src, text}){
+function ButtonSide({
+    alt,
+    src,
+    text,
+    route,
+}){
+    const navigate = useNavigate();
+
     return(
-        <div className='button-side'>
+        <button
+        className='button-side'
+        onClick={()=> navigate(route)}
+        >
             <img
             alt={alt}
             src={src}
@@ -11,7 +22,7 @@ function ButtonSide({alt, src, text}){
             <p className='button-side-title'>
                 {text}
             </p>
-        </div>
+        </button>
     );
 }
 

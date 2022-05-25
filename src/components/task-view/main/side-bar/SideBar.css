@@ -7,6 +7,8 @@
     height: 200px;
     border-bottom-left-radius: 150px;
     border-bottom-right-radius: 150px;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
 @media (min-width: 1024px) {
@@ -19,6 +21,8 @@
         padding-top: 90px;
         border-radius: 0;
         border-top-right-radius: 150px;
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 

@@ -1,14 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import './LogOut.css';
 
 function LogOut({text}){
     return(
-        <a
+        <Link
         className="log-out"
-        href="./LogOut.css"
+        to={'/'}
         >
             {text}
-        </a>
+        </Link>
     );
 }
 

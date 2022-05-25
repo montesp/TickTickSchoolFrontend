@@ -47,11 +47,13 @@ function TaskView(){
                     alt="Plus icon"
                     src={plusIcon}
                     text={"Tareas"}
+                    route='../tareas'
                     />
                     <ButtonSide
                     alt="Subject icon"
                     src={subjectIcon}
                     text={"Materias"}
+                    route='../materias'
                     />
                 </SideBar>
                 <MainTask>
