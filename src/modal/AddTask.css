@@ -1,0 +1,210 @@
+.modal-task {
+    background-color: var(--button);
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    max-width: 460px;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px 0;
+    border-radius: 30px;
+    color: var(--white);
+    box-shadow: 2px 3px 3px 0 var(--black);
+}
+
+.modal-title-label {
+    width: 80%;
+    margin: 10px auto;
+    margin-bottom: 5px;
+    color: inherit;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.modal-title-input {
+    width: 80%;
+    height: 30px;
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid var(--white);
+    border-radius: 10px;
+    outline: none;
+    font-size: 1.4rem;
+}
+
+.modal-title-input:focus {
+    outline: 1px solid var(--product-color);
+    box-shadow: 2px 2px 3px 0 var(--black);
+}
+
+.status-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+    height: 30px;
+    margin: 20px auto;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.status-container__label {
+    align-self: center;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.status-container__select {
+    background-color: var(--white);
+    width: 80%;
+    border: none;
+}
+
+.status-container__select:focus {
+    outline-color: var(--product-color);
+}
+
+.description-label {
+    width: 80%;
+    height: 120px;
+    padding: 10px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: auto;
+    outline: none;
+    font-size: 1.4rem;
+}
+
+
+.description-label:focus {
+    box-shadow: 2px 2px 3px 0 var(--black);
+}
+
+.description-label::-webkit-scrollbar {
+    display: none;
+}
+
+.buttons-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 80%;
+    margin: 15px auto;
+    margin-bottom: 5px;
+}
+
+.button {
+    width: 80%;
+    height: 44px;
+    margin: 0 auto;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+.button:hover {
+    box-shadow: 2px 2px 3px 0 var(--black);
+}
+
+.button-canceled {
+    background-color: inherit;
+ 
+}
+.button-canceled:hover {
+    background-color: var(--product-color);
+}
+
+
+.button-created {
+    background-color: var(--product-color);
+}
+
+
+
+
+@media ( min-width: 768px ) {
+    .modal-task {
+        min-width: 560px;
+    }
+
+    .modal-title-label {
+        width: 70%;
+        font-size: 2.2rem;
+    }
+
+    .status-container {
+        width: 70%;
+        height: 30px;
+        font-size: 1.8rem;
+    }
+
+    .status-container__label {
+        font-size: 1.8rem;
+    }
+    
+
+    .modal-title-input {
+        width: 70%;
+        height: 44px;
+        font-size: 1.8rem;
+    }
+
+    .description-label {
+        width: 70%;
+        font-size: 1.8rem;
+    }
+
+    .buttons-container {
+        width: 70%;
+    }
+
+    .button {
+        height: 50px;
+    }
+}
+
+@media (min-width: 1024px ) {
+    .modal-task {
+        min-width: 780px;
+    }
+
+    .modal-title-label {
+        width: 50%;
+        font-size: 2.6rem;
+    }
+
+    .status-container {
+        width: 50%;
+        height: 35px;
+    }
+
+    .modal-title-input {
+        width: 50%;
+        height: 54px;
+        font-size: 2.2rem;
+    }
+
+    .status-container__label {
+        font-size: 2rem;
+    }
+
+    .description-label {
+        width: 50%;
+        font-size: 2rem;
+    }
+
+    .button {
+        height: 54px;
+        width: 95%;
+    }
+
+    .buttons-container {
+        width: 50%;
+        
+    }
+
+}
+
+

@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useState} from "react";
 
 import { LogoTitle } from "./header/logo-title/LogoTItle";
 import { HeaderTask } from "./header/HeaderTask";
@@ -13,6 +13,10 @@ import { MainTask } from "./main/main-task/MainTask";
 import { Task } from "./main/task/Task";
 import { ButtonAddTask } from "./main/button-add-task/ButtonAddTask";
 
+// Modals
+import { Modal } from "../../modal/Modal";
+import { AddTask } from "../../modal/AddTask";
+
 // Icons
 import plusIcon from "../../assets/icons/plus.svg";
 import subjectIcon from "../../assets/icons/file.svg"
@@ -22,9 +26,7 @@ import documentIcon from '../../assets/icons/file-plus-2.svg';
 
 
 function TaskView(){
-    fetch('https://rickandmortyapi.com/api/character/161')
-    .then(response => response.json())
-    .then(data => console.log(data));
+    const [modal, setModal] = useState(false);
 
     return(
         <Fragment>
@@ -75,9 +77,17 @@ function TaskView(){
 
                     <ButtonAddTask
                         icon={documentIcon}
+                        modal={modal}
+                        setModal={setModal}
                     />
                 </MainTask>
             </MainTaskContainer>
+
+            {!!modal && (
+                <Modal>
+                    <AddTask/>
+                </Modal>
+            )}
         </Fragment>
 
     )

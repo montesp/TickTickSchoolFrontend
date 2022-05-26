@@ -1,8 +1,15 @@
 import './ButtonAddTask.css';
 
-function ButtonAddTask({icon}){
+function ButtonAddTask({
+    icon,
+    modal,
+    setModal,
+}){
     return(
-        <button className='button-add-task'>
+        <button
+        className='button-add-task'
+        onClick={()=> setModal(!modal)}
+        >
             <img
                 alt='document icon'
                 src={icon}
