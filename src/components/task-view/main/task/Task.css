@@ -1,3 +1,4 @@
+/* Task not realized */
 .task {
     color: var(--black);
     background-color: var(--task-color);
@@ -6,7 +7,7 @@
     flex-direction: column;
     width: 90%;
     min-width: 300px;
-    max-width: 380px;
+    max-width: 420px;
     height: 320px;
     margin: 30px auto;
     border-radius: 40px;
@@ -52,10 +53,21 @@
 
 .task-state-text__container {
     color: var(--black);
-    background-color: var(--green-state);
     width: 60%;
     text-align: center;
     border-radius: 10px;
+}
+
+.task-state-text__completed {
+    background-color: var(--green-state);
+}
+
+.task-state-text__progress {
+    background-color: var(--yellow-state);
+}
+
+.task-state-text__not-started {
+    background-color: var(--red-state);
 }
 
 .task-description {
@@ -97,6 +109,48 @@
     right: 15px;
 }
 
-@media (min-width: px) {
-    
+/* Task selected styles */
+.task__selected {
+    background-color: var(--task-color-selected);
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+.task__selected:hover {
+    background-color: var(--task-color-selected);
+    color: var(--white);
+}
+
+.task-title__selected {
+    text-align: center;
+    font-size: 3.2rem;
+    text-decoration: line-through;
+
+}
+
+.task-subject__selected {
+    display: none;
+    text-decoration: line-through;
+
+}
+
+.task-state__container__selected {
+    display: none;
+}
+
+
+.task-description__selected {
+    text-decoration: line-through;
+    height: 60px;
+}
+
+.task-completed-button__selected {
+    background-color: transparent;
+}
+
+.task-deleted-button__selected {
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
 }

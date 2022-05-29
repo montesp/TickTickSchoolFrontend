@@ -22,11 +22,62 @@ import plusIcon from "../../assets/icons/plus.svg";
 import subjectIcon from "../../assets/icons/file.svg"
 import documentIcon from '../../assets/icons/file-plus-2.svg';
 
-
-
-
 function TaskView(){
-    const [modal, setModal] = useState(false);
+    const localStorageTask = localStorage.getItem('TASKS_V1');
+    let parsedTasks;
+
+    if(!localStorageTask){
+        localStorage.setItem('TASKS_V1', JSON.stringify([]));
+        parsedTasks = [];
+    } else {
+        parsedTasks = JSON.parse(localStorageTask);
+    }
+
+    console.log(parsedTasks);
+
+    const [modalAdd, setModalAdd] = useState(false);
+    const [tasks, setTasks] = useState(parsedTasks);
+
+    const deleteTask = (key) => {
+        const taskIndex = tasks.findIndex(task => task.key === key);
+        const newTasks = [...tasks];
+        newTasks.splice(taskIndex, 1);
+        saveTasks(newTasks)
+    }
+
+    const completeTask = (key) => {
+        const taskIndex = tasks.findIndex(task => task.key === key);
+        const newTasks = [...tasks];
+        newTasks[taskIndex].completed =  !newTasks[taskIndex].completed;
+        saveTasks(newTasks)
+      };
+
+    const saveTasks = (newTasks) => {
+        const stringifiedTaks = JSON.stringify(newTasks);
+        localStorage.setItem('TASKS_V1', stringifiedTaks);
+        setTasks(newTasks);
+    }
+
+    const addTask = (title, subject, state , description) => {
+        const newTasks = [...tasks];
+        const valueTest = false;
+        const newKey = newTasks.length + 1;
+
+        for(let i = 0; i < newTasks.length; i++ ){
+            
+        }
+
+        newTasks.push({
+            key: newKey,
+            name: title,
+            subject: subject,
+            description: description,
+            status: state,
+            completed: false,
+        })
+
+        saveTasks(newTasks);
+    }
 
     return(
         <Fragment>
@@ -59,35 +110,37 @@ function TaskView(){
                     />
                 </SideBar>
                 <MainTask>
-                    <Task/>
-                    <Task/>
-                    <Task/>
-
-                    <Task/>
-                    <Task/>
-                    <Task/>
-                    <Task/>
-                    <Task/>
-                    <Task/>
-                    <Task/>
-                    <Task/>
-
-                    <Task/>
-                    <Task/>
+                    {tasks.map(task => (
+                        <Task
+                        key={task.key}
+                        title={task.name}
+                        subject={task.subject}
+                        state={task.status}
+                        description={task.description}
+                        onDelete={()=> deleteTask(task.key)}
+                        onComplete={()=> completeTask(task.key)}
+                        completed={task.completed}
+                        />
+                    ))}
 
                     <ButtonAddTask
                         icon={documentIcon}
-                        modal={modal}
-                        setModal={setModal}
+                        modalAdd={modalAdd}
+                        setModalAdd={setModalAdd}
                     />
                 </MainTask>
             </MainTaskContainer>
 
-            {!!modal && (
+            {!!modalAdd && (
                 <Modal>
-                    <AddTask/>
+                    <AddTask
+                        modalAdd={modalAdd}
+                        setModalAdd={setModalAdd}
+                        addTask={addTask}
+                    />
                 </Modal>
             )}
+
         </Fragment>
 
     )

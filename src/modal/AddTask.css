@@ -105,20 +105,22 @@
 }
 
 .button:hover {
-    box-shadow: 2px 2px 3px 0 var(--black);
 }
 
 .button-canceled {
-    background-color: inherit;
- 
-}
-.button-canceled:hover {
-    background-color: var(--product-color);
+    background-color: transparent;
 }
 
+.button-canceled:hover {
+    box-shadow: 1px 1px 1px 0 var(--black);
+}
 
 .button-created {
     background-color: var(--product-color);
+}
+
+.button-created:hover {
+    box-shadow: 2px 2px 3px 0 var(--black);
 }
 
 
