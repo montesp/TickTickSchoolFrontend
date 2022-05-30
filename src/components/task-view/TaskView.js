@@ -52,20 +52,16 @@ function TaskView(){
         saveTasks(newTasks)
       };
 
-    const saveTasks = (newTasks) => {
-        const stringifiedTaks = JSON.stringify(newTasks);
+    const saveTasks = (newTask) => {
+        const stringifiedTaks = JSON.stringify(newTask);
         localStorage.setItem('TASKS_V1', stringifiedTaks);
-        setTasks(newTasks);
+        setTasks(newTask);
     }
 
     const addTask = (title, subject, state , description) => {
         const newTasks = [...tasks];
-        const valueTest = false;
         const newKey = newTasks.length + 1;
 
-        for(let i = 0; i < newTasks.length; i++ ){
-            
-        }
 
         newTasks.push({
             key: newKey,

@@ -1,7 +1,7 @@
 .button-add-task {
     background-color: var(--product-color);
     position: fixed;
-    /* z-index: 1; */
+    z-index: 1;
     bottom: 10px;
     right: 10px;
     width: 64px;

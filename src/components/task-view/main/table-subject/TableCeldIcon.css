@@ -1,0 +1,60 @@
+.celd-i {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: var(--black);
+}
+
+.celd-icon-button {
+    background-color: var(--red-state);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 22px;
+    height:22px ;
+    margin-left: 2px;
+    border-radius: 50%;
+    border: 0;
+    outline: 0;
+}
+
+.celd-icon-button:hover {
+    box-shadow: 1px 1px 5px 0 var(--black);
+}
+
+.celd-icon-button__icon {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    /* border-radius: 50%; */
+
+}
+
+
+
+@media (min-width: 768px) {
+    .celd {
+        height: 54px;
+    }
+
+    .celd-icon-button {
+        width: 36px ;
+        height: 36px;
+    }
+
+}
+
+@media (min-width: 1024px) {
+    .celd-icon-button {
+        width: 44px ;
+        height: 44px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .celd {
+        height: 60px;
+    }
+}
+

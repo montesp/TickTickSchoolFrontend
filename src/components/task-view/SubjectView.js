@@ -1,4 +1,4 @@
-import React, {Fragment} from "react";
+import React, {Fragment, useState} from "react";
 
 import { LogoTitle } from "./header/logo-title/LogoTItle";
 import { HeaderTask } from "./header/HeaderTask";
@@ -12,18 +12,62 @@ import { ButtonSide } from "./main/button-side/ButtonSide";
 import { TableContainer } from "./main/table-subject/TableContainer";
 import { TableSubject } from "./main/table-subject/TableSubject";
 import { RowCeld } from "./main/table-subject/RowCeld";
+import { ButtonAddTask } from "./main/button-add-task/ButtonAddTask";
 
 // Icons
 import plusIcon from "../../assets/icons/plus.svg";
-import subjectIcon from "../../assets/icons/file.svg"
+import subjectIcon from "../../assets/icons/file.svg";
+import documentIcon from '../../assets/icons/file-plus-2.svg';
+import Delete from '../../assets/icons/x.svg';
 
 
+// Modals 
+import { Modal } from "../../modal/Modal";
 
 
 function SubjectView(){
-    fetch('https://rickandmortyapi.com/api/character/161')
-    .then(response => response.json())
-    .then(data => console.log(data));
+    const localStorageSubject = localStorage.getItem('SUBJECTS_V1');
+    let parsedSubject;
+
+    if(!localStorageSubject){
+        localStorage.setItem('SUBJECTS_V1', JSON.stringify([]));
+        parsedSubject = [];
+    } else {
+        parsedSubject = JSON.parse(localStorageSubject);
+    }
+
+    console.log(parsedSubject);
+
+    const [modalAddS, setModalAddS] = useState(false);
+    const [subjects, setSubjects] = useState(parsedSubject);
+
+    const deleteSubject = (key) => {
+        const subjectIndex = subjects.findIndex(subject => subject.key === key);
+        const newSubjects = [...subjects];
+        newSubjects.splice(subjectIndex, 1);
+        saveSubjects(newSubjects);
+    }
+
+
+    const saveSubjects = (newSubjects) => {
+        const stringifiedTaks = JSON.stringify(newSubjects);
+        localStorage.setItem('TASKS_V1', stringifiedTaks);
+        setSubjects(newSubjects);
+    }
+
+    const addSubject = (subject, teacher, classroom) => {
+        const newSubjects = [...subjects];
+        const newKey = newSubjects.length + 1;
+
+        newSubjects.push({
+            key: newKey,
+            subject: subject,
+            teacher: teacher,
+            classroom: classroom,
+        })
+
+        saveSubjects(newSubjects);
+    }
 
     return(
         <Fragment>
@@ -61,25 +105,41 @@ function SubjectView(){
                             subject="nombre materia"
                             teacher="profesor"
                             classroom="aula"
+                            icon={Delete}
                         />
                         <RowCeld
                             subject="nombre materia"
                             teacher="profesor"
                             classroom="aula"
+                            icon={Delete}
                         />
                         <RowCeld
                             subject="nombre materia"
                             teacher="profesor"
                             classroom="aula"
+                            icon={Delete}
                         />
                         <RowCeld
                             subject="nombre materia"
                             teacher="profesor"
                             classroom="aula"
+                            icon={Delete}
                         />
                     </TableSubject>
                 </TableContainer>
+                <ButtonAddTask
+                        icon={documentIcon}
+                        modalAdd={modalAddS}
+                        setModalAdd={setModalAddS}
+                    />
             </MainTaskContainer>
+
+
+            {!!modalAddS && (
+                <Modal>
+                </Modal>
+            )}
+
         </Fragment>
 
     )
