@@ -23,7 +23,35 @@ import Delete from '../../assets/icons/x.svg';
 
 // Modals 
 import { Modal } from "../../modal/Modal";
+import { AddSubject } from "../../modal/AddSubject";
 
+
+// const data = [
+//     {
+//       key:1,
+//       subject: "Gestion de proyectos",
+//       teacher: 'Manuel Irigoyen',
+//       classroom: 'B3'  
+//     },
+//     {
+//         key:2,
+//         subject: "Gestion de proyectos",
+//         teacher: 'Manuel Irigoyen',
+//         classroom: 'B3'  
+//       },
+//       {
+//         key:3,
+//         subject: "Gestion de proyectos",
+//         teacher: 'Manuel Irigoyen',
+//         classroom: 'C1'  
+//       },
+//       {
+//         key:4,
+//         subject: "Gestion de proyectos",
+//         teacher: 'Manuel Irigoyen',
+//         classroom: 'F6',
+//       },
+// ]
 
 function SubjectView(){
     const localStorageSubject = localStorage.getItem('SUBJECTS_V1');
@@ -36,12 +64,13 @@ function SubjectView(){
         parsedSubject = JSON.parse(localStorageSubject);
     }
 
-    console.log(parsedSubject);
 
     const [modalAddS, setModalAddS] = useState(false);
     const [subjects, setSubjects] = useState(parsedSubject);
 
     const deleteSubject = (key) => {
+        console.log(key);
+        console.log(subjects);
         const subjectIndex = subjects.findIndex(subject => subject.key === key);
         const newSubjects = [...subjects];
         newSubjects.splice(subjectIndex, 1);
@@ -51,7 +80,7 @@ function SubjectView(){
 
     const saveSubjects = (newSubjects) => {
         const stringifiedTaks = JSON.stringify(newSubjects);
-        localStorage.setItem('TASKS_V1', stringifiedTaks);
+        localStorage.setItem('SUBJECTS_V1', stringifiedTaks);
         setSubjects(newSubjects);
     }
 
@@ -69,6 +98,8 @@ function SubjectView(){
         saveSubjects(newSubjects);
     }
 
+
+    
     return(
         <Fragment>
             <HeaderT>
@@ -101,30 +132,17 @@ function SubjectView(){
                 </SideBar>
                 <TableContainer>
                     <TableSubject>
-                        <RowCeld
-                            subject="nombre materia"
-                            teacher="profesor"
-                            classroom="aula"
+                        {parsedSubject.map(subject => (
+                            <RowCeld
+                            key={subject.key}
+                            subject={subject.subject}
+                            teacher={subject.teacher}
+                            classroom={subject.classroom}
                             icon={Delete}
+                            onDelete={() => deleteSubject(subject.key)}
                         />
-                        <RowCeld
-                            subject="nombre materia"
-                            teacher="profesor"
-                            classroom="aula"
-                            icon={Delete}
-                        />
-                        <RowCeld
-                            subject="nombre materia"
-                            teacher="profesor"
-                            classroom="aula"
-                            icon={Delete}
-                        />
-                        <RowCeld
-                            subject="nombre materia"
-                            teacher="profesor"
-                            classroom="aula"
-                            icon={Delete}
-                        />
+
+                        ))}
                     </TableSubject>
                 </TableContainer>
                 <ButtonAddTask
@@ -137,6 +155,10 @@ function SubjectView(){
 
             {!!modalAddS && (
                 <Modal>
+                    <AddSubject
+                        setModalAddS={setModalAddS}
+                        addSubject={addSubject}
+                    />
                 </Modal>
             )}
 

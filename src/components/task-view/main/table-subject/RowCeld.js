@@ -1,4 +1,5 @@
 import './RowCeld.css';
+import './TableCeldIcon.css'
 import { TableCeld } from "./TableCeld";
 import { TableCeldIcon } from './TableCeldIcon';
 
@@ -9,6 +10,7 @@ function RowCeld({
     teacher,
     classroom,
     icon,
+    onDelete,
 }) {
      return(
          <div className='celd-row'>
@@ -21,9 +23,18 @@ function RowCeld({
              <TableCeld
                 text={classroom}
             />
-            <TableCeldIcon
-                icon={icon}
-            />
+           <div className="celd-i">
+                <button
+                className='celd-icon-button'
+                onClick={onDelete}
+                >
+                    <img
+                        className='celd-icon-button__icon'
+                        alt='delete subject icon'
+                        src={icon}
+                    />
+                </button>
+            </div>
          </div>
      );
  }
