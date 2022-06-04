@@ -31,19 +31,19 @@ import { AddSubject } from "../../modal/AddSubject";
 //       key:1,
 //       subject: "Gestion de proyectos",
 //       teacher: 'Manuel Irigoyen',
-//       classroom: 'B3'  
+//       classroom: 'B3' ,
 //     },
 //     {
 //         key:2,
 //         subject: "Gestion de proyectos",
 //         teacher: 'Manuel Irigoyen',
-//         classroom: 'B3'  
+//         classroom: 'B3',
 //       },
 //       {
 //         key:3,
 //         subject: "Gestion de proyectos",
 //         teacher: 'Manuel Irigoyen',
-//         classroom: 'C1'  
+//         classroom: 'C1',
 //       },
 //       {
 //         key:4,

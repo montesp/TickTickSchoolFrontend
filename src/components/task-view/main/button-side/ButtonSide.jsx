@@ -1,5 +1,6 @@
-import './ButtonSide.css'
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useNavigate } from "react-router-dom";
+import './ButtonSide.css';
 
 function ButtonSide({
     alt,

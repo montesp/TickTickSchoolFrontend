@@ -1,3 +1,4 @@
+import React from 'react';
 import './TableCeld.css';
 
 function TableCeld({text}) {

@@ -1,5 +1,8 @@
+import React from 'react';
+
+
 import './RowCeld.css';
-import './TableCeldIcon.css'
+import './TableCeldIcon.css';
 import { TableCeld } from "./TableCeld";
 import { TableCeldIcon } from './TableCeldIcon';
 
@@ -23,18 +26,10 @@ function RowCeld({
              <TableCeld
                 text={classroom}
             />
-           <div className="celd-i">
-                <button
-                className='celd-icon-button'
-                onClick={onDelete}
-                >
-                    <img
-                        className='celd-icon-button__icon'
-                        alt='delete subject icon'
-                        src={icon}
-                    />
-                </button>
-            </div>
+            <TableCeldIcon
+                icon={icon}
+                onDelete={onDelete}
+            />
          </div>
      );
  }

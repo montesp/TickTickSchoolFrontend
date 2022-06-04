@@ -1,3 +1,4 @@
+import React from 'react';
 import './AddSubject.css'
 
 function AddSubject({
@@ -11,7 +12,6 @@ function AddSubject({
         const subject = document.getElementById('subject').value;
         const teacher = document.getElementById('teacher').value;
         const classroom = document.getElementById('classroom').value;
-        console.log({subject, teacher, classroom});
         addSubject(subject, teacher, classroom);
         onCancel()
     }

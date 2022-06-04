@@ -1,3 +1,5 @@
+
+import React from 'react';
 import './MainTask.css'
 
 function MainTask({children}){

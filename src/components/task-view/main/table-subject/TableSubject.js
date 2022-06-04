@@ -1,3 +1,4 @@
+import React from 'react';
 import './TableSubject.css';
 
 function TableSubject({children}) {

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import './Task.css';
 
 import AcceptIcon from '../../../../assets/icons/check-circle.svg';
